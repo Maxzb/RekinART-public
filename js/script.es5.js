@@ -4857,7 +4857,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 $('.hamburger').on('click', function () {
   $('.hamburger').toggleClass('is-active');
   $('.menu').toggleClass('menu-active');
-  $('.menu').toggleClass('mob-menu-overflow');
   $('body').toggleClass('scroll');
 }); //ПЛАВНОЕ ПЕРЕМЕЩЕНИЕ К ЯКОРЯМ
 
@@ -4872,6 +4871,9 @@ $('.menu__list').on("click", "a", function (e) {
   $('body, html').animate({
     scrollTop: top
   }, 1000);
+  $('.hamburger').toggleClass('is-active');
+  $('.menu').toggleClass('menu-active');
+  $('body').removeClass('scroll');
 }); // SLICK-SLIDER
 
 $(".section-slider").slick({

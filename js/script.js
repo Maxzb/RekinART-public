@@ -6,7 +6,6 @@
 $('.hamburger').on('click', function () {
    $('.hamburger').toggleClass('is-active');
    $('.menu').toggleClass('menu-active');
-   $('.menu').toggleClass('mob-menu-overflow');
    $('body').toggleClass('scroll');
 });
 
@@ -20,6 +19,10 @@ $('.menu__list').on("click","a", function (e) {
    top = $(id).position().top;
    //анимируем переход на расстояние
    $('body, html').animate({scrollTop: top}, 1000);
+
+   $('.hamburger').toggleClass('is-active');
+   $('.menu').toggleClass('menu-active');
+   $('body').removeClass('scroll');
 });
 
 // SLICK-SLIDER
